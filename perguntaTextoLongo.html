@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Pergunta</title>
+    <link rel="stylesheet" href="css/perguntaTextoLongo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+        <div>
+
+            <h1> Pergunta</h1>
+            <div class="display">
+
+                <div class="perguntas">
+                    <label>Pergunta</label>
+                    <input type="text" name="pergunta" placeholder="Digite a pergunta">
+  
+                    <Label>Inativa</Label>
+                    <input type="checkbox" name="pergunta_inativa" id="pergunta_inativa">
+                    <br>
+                    
+                    <label>Categoria</label>
+                    <select>
+                        <option value="">Selecione a categoria</option>
+                        <option value="Socioeconômica">Socioeconômica</option>
+                        <option value="Votação">Votação</option>
+                        <option value="Pergunta">Pergunta</option>
+                    </select>
+                </div>
+                <div class="tipo">
+                    <label>Tipo</label>
+                    <select id="select">
+                        <option value="">Selecione a categoria</option>
+                        <option value="#">Pontuação</option>
+                        <option value="novaperguntaMescolhaUalternativaPergunta.html">Multípla escolha com uma resposta</option>
+                        <option value="#">Multípla escolha com várias respotas</option>
+                        <option value="novaperguntaTextoCurto.html">Texto Curto</option>
+                        <option value="perguntaTextoLongo.html">Texto Longo</option>
+                        <option value="Número">Número</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+        <button>Salvar Pergunta</button>
+    </div>
+
+    <script>
+            $(document).ready(function () {
+
+                $.ajax({
+                    url: "home.html", dataType: "html"
+                }).done(function (responseHtml) {
+                    $("#header").html(responseHtml);
+                });
+
+             $("#select").on('change', function(){
+                        var url = $(this).val();
+                        if(url){
+                            window.location = url;
+                        }
+                        return false;
+                    });
+            });
+        </script>
+</body>
+
+</html>

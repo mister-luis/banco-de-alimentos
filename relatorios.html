@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="css/relatorios.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="js/chartjs/main.js"></script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="container">
+
+        <h1>Resultado Questionário 1</h1>
+        <div id="results">
+            <div>
+                <h2>Pergunta 1</h2>
+                <div style="width:30%">
+                    <label>Tipo</label>
+                    <select id="selectType1">
+                        <option value="Selecione o tipo">Selecione o tipo</option>
+                        <option value="Grafico de barras">Grafico de barras</option>
+                        <option value="Grafico de linha" selected>Grafico de linha</option>
+                        <option value="Grafico de pizza">Grafico de pizza</option>
+                    </select>
+
+                    <canvas id="grafico1" class="graphic" height="450" width="600">
+                    </canvas>
+                    <script>
+                        makeGraphic(1);
+                    </script>
+                </div>
+            </div>
+
+            <div>
+                <h2>Pergunta 2</h2>
+                <div style="width:30%">
+                    <label>Tipo</label>
+                    <select id="selectType2">
+                        <option value="Selecione o tipo">Selecione o tipo</option>
+                        <option value="Grafico de barras">Grafico de barras</option>
+                        <option value="Grafico de linha" selected>Grafico de linha</option>
+                        <option value="Grafico de pizza">Grafico de pizza</option>
+                    </select>
+
+                    <canvas id="grafico2" class="graphic" height="450" width="600">
+                    </canvas>
+                    <script>
+                        makeGraphic(2);
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "home.html", dataType: "html"
+            }).done(function (responseHtml) {
+                $("#header").html(responseHtml);
+            });
+        });
+    </script>
+</body>
+
+</html>

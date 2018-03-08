@@ -1,0 +1,47 @@
+nav{
+    float: left;
+}
+
+
+.lista{
+    list-style:none; 
+    float:left; 
+    padding-left: 0;
+margin-left: 20em;
+}
+
+.lista li{
+    position:relative; 
+    float:left; 
+    margin: 5px;
+    
+}
+li a {
+    display: block;
+    color: #6E7780;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.lista li a:hover{
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+.lista div{
+    margin-left: 10em;
+    margin-top: 20px;
+}
+
+.lista input{
+    border: none;
+    margin-left: 10px;
+}
+
+
+img{
+    float: left;
+}
